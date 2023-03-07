@@ -359,6 +359,9 @@
     <ClCompile Include="InventoryChanger\EconItemViewFunctions.cpp">
       <Filter>InventoryChanger</Filter>
     </ClCompile>
+    <ClCompile Include="Advanced.cpp">
+      <Filter>Hacks</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GUI.h">
@@ -1167,6 +1170,9 @@
     </ClInclude>
     <ClInclude Include="Hacks\Chams\ChamsLayer.h">
       <Filter>Hacks\Chams</Filter>
+    </ClInclude>
+    <ClInclude Include="Advanced.h">
+      <Filter>Hacks</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -7,6 +7,7 @@
 #include "Visuals.h"
 #include "Misc.h"
 #include "Sound.h"
+#include "Advanced.h"
 #include <InventoryChanger/InventoryChanger.h>
 
 #include <Interfaces/OtherInterfaces.h>
@@ -20,6 +21,7 @@ struct Features {
     inventory_changer::InventoryChanger inventoryChanger;
     Misc misc;
     Sound sound;
+    Advanced advanced;
 };
 
 [[nodiscard]] inline Features createFeatures(const Memory& memory, const ClientInterfaces& clientInterfaces, const EngineInterfaces& engineInterfaces, const OtherInterfaces& otherInterfaces, const PatternFinder& clientPatternFinder, const PatternFinder& enginePatternFinder, Helpers::RandomGenerator& randomGenerator)
@@ -31,6 +33,7 @@ struct Features {
         .visuals{ memory, otherInterfaces, clientInterfaces, engineInterfaces, clientPatternFinder, enginePatternFinder },
         .inventoryChanger{ inventory_changer::createInventoryChanger(engineInterfaces, clientInterfaces, otherInterfaces, memory, clientPatternFinder, randomGenerator) },
         .misc{ clientInterfaces, engineInterfaces, otherInterfaces, memory, clientPatternFinder, enginePatternFinder },
-        .sound{ clientInterfaces, memory }
+        .sound{ clientInterfaces, memory },
+        .advanced{}
     };
 }

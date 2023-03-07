@@ -110,6 +110,7 @@ void GUI::render(const EngineInterfaces& engineInterfaces, const ClientInterface
         renderStyleWindow(config);
         config.getFeatures().misc.drawGUI(config.getFeatures().visuals, config.getFeatures().inventoryChanger, config.getFeatures().glow, false);
         renderConfigWindow(interfaces, memory, config);
+        config.getFeatures().advanced.drawGUI(false);
     } else {
         renderGuiStyle2(engineInterfaces, clientInterfaces, interfaces, memory, config);
     }
@@ -159,6 +160,7 @@ void GUI::renderMenuBar(Features& features) noexcept
         features.sound.menuBarItem();
         menuBarItem("Style", window.style);
         features.misc.menuBarItem();
+        features.advanced.menuBarItem();
         menuBarItem("Config", window.config);
         ImGui::EndMainMenuBar();   
     }
@@ -656,6 +658,7 @@ void GUI::renderGuiStyle2(const EngineInterfaces& engineInterfaces, const Client
             ImGui::EndTabItem();
         }
         config.getFeatures().misc.tabItem(config.getFeatures().visuals, config.getFeatures().inventoryChanger, config.getFeatures().glow);
+        config.getFeatures().advanced.tabItem();
         if (ImGui::BeginTabItem("Config")) {
             renderConfigWindow(interfaces, memory, config, true);
             ImGui::EndTabItem();

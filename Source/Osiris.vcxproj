@@ -109,6 +109,7 @@
       <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)$(TargetName)-c.pch</PrecompiledHeaderOutputFile>
       <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(TargetName)-c.pch</PrecompiledHeaderOutputFile>
     </ClCompile>
+    <ClCompile Include="Advanced.cpp" />
     <ClCompile Include="Config.cpp" />
     <ClCompile Include="ConfigStructs.cpp" />
     <ClCompile Include="CSGO\EconItemView.cpp" />
@@ -197,6 +198,7 @@
     <ClInclude Include="..\Dependencies\MinHook\MinHook.h" />
     <ClInclude Include="..\Dependencies\MinHook\trampoline.h" />
     <ClInclude Include="..\Dependencies\nlohmann\json.hpp" />
+    <ClInclude Include="Advanced.h" />
     <ClInclude Include="Config.h" />
     <ClInclude Include="ConfigStructs.h" />
     <ClInclude Include="Config\Configurable.h" />
