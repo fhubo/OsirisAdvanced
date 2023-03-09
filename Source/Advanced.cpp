@@ -2,11 +2,17 @@
 #include <CSGO/Constants/ConVarNames.h>
 #include <CSGO/ConVar.h>
 #include <RetSpoof/RetSpoofGadgets.h>
+#include <CSGO/PODs/ConVar.h>
 
 struct AdvancedConfig
 {
     bool recoilCrosshair;
 } advancedConfig;
+
+Advanced::Advanced(OtherInterfaces otherInterfaces) : interfaces{ otherInterfaces }
+{
+
+}
 
 void Advanced::recoilCrosshair() noexcept
 {
