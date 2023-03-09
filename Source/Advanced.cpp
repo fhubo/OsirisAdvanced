@@ -1,4 +1,9 @@
 #include "Advanced.h"
+#include "ConfigStructs.h"
+#include "InputUtil.h"
+#include "Memory.h"
+#include "ProtobufReader.h"
+
 #include <CSGO/Constants/ConVarNames.h>
 #include <CSGO/ConVar.h>
 #include <RetSpoof/RetSpoofGadgets.h>
@@ -62,4 +67,33 @@ void Advanced::drawGUI(bool contentOnly) noexcept
 
     if (!contentOnly)
         ImGui::End();
+}
+
+static void from_json(const json& j, AdvancedConfig& m)
+{
+    read(j, "Recoil Crosshair", m.recoilCrosshair);
+}
+
+static void to_json(json& j, const AdvancedConfig& o)
+{
+    const AdvancedConfig dummy;
+
+    WRITE("Recoil Crosshair", recoilCrosshair);
+}
+
+json Advanced::toJson() noexcept
+{
+    json j;
+    to_json(j, advancedConfig);
+    return j;
+}
+
+void Advanced::fromJson(const json& j) noexcept
+{
+    from_json(j, advancedConfig);
+}
+
+void Advanced::resetConfig() noexcept
+{
+    advancedConfig = {};
 }
