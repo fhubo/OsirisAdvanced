@@ -1,20 +1,9 @@
 #include "Advanced.h"
-#include <CSGO/Constants/ConVarNames.h>
-#include <CSGO/ConVar.h>
-#include <RetSpoof/RetSpoofGadgets.h>
 
 struct AdvancedConfig
 {
     bool recoilCrosshair;
 } advancedConfig;
-
-void Advanced::recoilCrosshair() noexcept
-{
-    static auto recoilCrosshairVar{ interfaces.getCvar().findVar(csgo::cl_crosshair_recoil) };
-
-    recoilCrosshairVar->onChangeCallbacks.size = 0;
-    csgo::ConVar::from(retSpoofGadgets->client, recoilCrosshairVar).setValue(advancedConfig.recoilCrosshair);
-}
 
 static bool windowOpen = false;
 

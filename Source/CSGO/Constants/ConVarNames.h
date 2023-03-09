@@ -24,7 +24,6 @@ CONVAR_NAME(cl_csm_enabled);
 CONVAR_NAME(sv_skyname);
 CONVAR_NAME(cl_fullupdate);
 CONVAR_NAME(sv_cheats);
-CONVAR_NAME(cl_crosshair_recoil);
 
 #undef CONVAR_NAME
 

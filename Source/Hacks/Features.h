@@ -34,6 +34,6 @@ struct Features {
         .inventoryChanger{ inventory_changer::createInventoryChanger(engineInterfaces, clientInterfaces, otherInterfaces, memory, clientPatternFinder, randomGenerator) },
         .misc{ clientInterfaces, engineInterfaces, otherInterfaces, memory, clientPatternFinder, enginePatternFinder },
         .sound{ clientInterfaces, memory },
-        .advanced{ otherInterfaces }
+        .advanced{}
     };
 }

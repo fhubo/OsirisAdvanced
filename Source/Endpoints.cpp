@@ -132,8 +132,6 @@ bool FASTCALL_CONV ClientModeHooks::createMove(FASTCALL_THIS(csgo::ClientMode* t
     features->misc.fixTabletSignal();
     features->misc.slowwalk(cmd);
 
-    features->advanced.recoilCrosshair();
-
     EnginePrediction::run(ClientInterfaces{ retSpoofGadgets->client, *globalContext->clientInterfaces }, *globalContext->memory, cmd);
 
     features->aimbot.run(features->misc, globalContext->getEngineInterfaces(), ClientInterfaces{ retSpoofGadgets->client, *globalContext->clientInterfaces }, globalContext->getOtherInterfaces(), *globalContext->config, *globalContext->memory, cmd);
